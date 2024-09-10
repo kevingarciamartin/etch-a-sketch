@@ -24,3 +24,11 @@ function createGrid(gridSize) {
 function colorCell() {
     this.style.backgroundColor = color;
 }
+
+const slider = document.querySelector(".slider");
+let output = document.querySelector(".slider-value");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
