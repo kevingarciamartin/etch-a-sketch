@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: skyblue;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.grid {
+    display: grid;
+
+    background-color: #e1e1e1;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    cursor: crosshair;
+
+    .cell {
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+}
