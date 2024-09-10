@@ -1,9 +1,17 @@
-const gridSize = 16;
 const color = "black";
 
 const grid = document.querySelector(".grid");
 
-createGrid(gridSize);
+const slider = document.querySelector(".slider");
+let output = document.querySelector(".slider-value");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+    output.innerHTML = this.value;
+    changeGridSize();
+}
+
+createGrid(slider.value);
 
 function createGrid(gridSize) {
     grid.style.cssText = `grid-template-columns: repeat(${gridSize}, 1fr);`
@@ -25,10 +33,11 @@ function colorCell() {
     this.style.backgroundColor = color;
 }
 
-const slider = document.querySelector(".slider");
-let output = document.querySelector(".slider-value");
-output.innerHTML = slider.value;
+function changeGridSize() {
+    resetGrid();
+    createGrid(slider.value);
+}
 
-slider.oninput = function() {
-  output.innerHTML = this.value;
+function resetGrid() {
+    grid.innerHTML = "";
 }
